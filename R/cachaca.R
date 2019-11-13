@@ -149,7 +149,7 @@ cachaca <-
 		sleepsec = 60 ,
 
 		# which filesize function should be used
-		filesize_fun = 'httr' ,
+		filesize_fun = 'rcurl' ,
 		
 		# whether to actually cache the downloaded files
 		# setting this option to FALSE eliminates the purpose of cachaca()
