@@ -16,8 +16,8 @@ get_catalog_pof <-
 			data.frame(
 				full_urls = paste0( pof_ftp , ay , "/Microdados/Dados.zip" ) ,
 				period = gsub( "Pesquisa_de_Orcamentos_Familiares_" , "" , ay ) ,
-				documentation = paste0( pof_ftp , ay , "/Microdados/" , ifelse( second_year < 2009 , "Documentacao.zip" , "documentacao.zip" ) ) ,
-				aliment_file = ifelse( second_year < 2009 , NA , paste0( pof_ftp , ay , "/Microdados/tradutores.zip" ) ) ,
+				documentation = paste0( pof_ftp , ay , "/Microdados/" , ifelse( second_year = 2009 , "documentacao.zip" , "Documentacao.zip" ) ) ,
+				aliment_file = ifelse( second_year < 2009 , NA , paste0( pof_ftp , ay , ifelse ( second_year = 2009, "/Microdados/tradutores.zip", "/Microdados/Tradutores.zip" ) ) ,
 				output_folder = paste0( output_dir , "/" , gsub( "Pesquisa_de_Orcamentos_Familiares_" , "" , ay ) ) ,
 				stringsAsFactors = FALSE
 			)
