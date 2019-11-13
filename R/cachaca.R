@@ -271,6 +271,19 @@ cachaca <-
 
 						}
 						
+						# if using GET with write_disk..
+						if( identical( FUN , rcurl::GET ) ){
+						# do not include the destfile= in the call, since it's already included inside the write_disk()
+							
+							# did the download work?
+							success <- do.call( FUN , list( this_url , ... ) )
+
+						} else {
+						
+							# did the download work?
+							success <- do.call( FUN , list( this_url , destfile , ... ) ) == 0
+
+						}
 						
 						if( filesize_fun == 'unzip_verify' ){
 						
