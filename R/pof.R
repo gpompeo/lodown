@@ -64,7 +64,7 @@ lodown_pof <-
 				# tables with food codes  #
 
 				# figure out which is the alimentacao file
-				cda <- ali_files[ grep( 'alimenta' , tolower( ali_files ) , value=TRUE) ]
+				cda <- ali_files[2] #[ grep( 'alimenta' , tolower( ali_files )) ]
 
 				# extract both tabs from the excel file
 				componentes <- readxl::read_excel( cda , sheet = 1 , skip = 3 , col_types = rep( 'text' , 7 ) , col_names = c( 'codigo' , 'nivel.1' , 'desc.1' , 'nivel.2' , 'desc.2' , 'nivel.3' , 'desc.3' ) )
